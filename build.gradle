@@ -1,5 +1,15 @@
+buildscript {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 plugins {
     id 'org.spongepowered.plugin' version '0.9.0'
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
 }
 
 group = 'com.chillaxowner'
@@ -8,6 +18,9 @@ version = '1.0-SNAPSHOP'
 dependencies {
     compileOnly 'org.spongepowered:spongeapi:7.3.0'
     annotationProcessor 'org.spongepowered:spongeapi:7.3.0'
+    implementation 'com.github.ronaldburns:PlaceholderAPI:4.4'
+
+    compileOnly fileTree(dir: 'lib', includes: ['*.jar'])
 }
 
 sponge.plugin.id = 'chillaxscoreboard'
